@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="worldTechLevels" class="traveller.world.WorldTechLevels">
+		<property name="starportModifier">
+			<map>
+				<entry key-ref="A" value="6" />
+				<entry key-ref="B" value="4" />
+				<entry key-ref="C" value="2" />
+				<entry key-ref="X" value="-4" />
+			</map>
+		</property>
+		<property name="sizeModifier">
+			<map>
+				<entry key="0-1" value="2" />
+				<entry key="2-4" value="1" />
+			</map>
+		</property>
+		<property name="atmosphereModifier">
+			<map>
+				<entry key="0-3" value="1" />
+				<entry key="10-15" value="1" />
+			</map>
+		</property>
+		<property name="hydroModifier">
+			<map>
+				<entry key="0" value="1" />
+				<entry key="9" value="1" />
+				<entry key="10" value="2" />
+			</map>
+		</property>
+		<property name="populationModifier">
+			<map>
+				<entry key="1-5" value="1" />
+				<entry key="9" value="1" />
+				<entry key="10" value="2" />
+				<entry key="11" value="3" />
+				<entry key="12" value="4" />
+			</map>
+		</property>
+		<property name="governmentModifier">
+			<map>
+				<entry key="0" value="1" />
+				<entry key="5" value="1" />
+				<entry key="7" value="2" />
+				<entry key="13-14" value="-2" />
+			</map>
+		</property>
+		<property name="enviromentalLimit">
+			<map>
+				<entry key="0-1" value="8" />
+				<entry key="2-3" value="5" />
+				<entry key="4,7,9" value="3" />
+				<entry key="10" value="8" />
+				<entry key="11" value="9" />
+				<entry key="12" value="10" />
+				<entry key="13-14" value="5" />
+				<entry key="15" value="8" />
+			</map>
+		</property>
+		
+		<property name="techLevels">
+			<map>
+				<entry key="0">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="0" />
+						<property name="shortDescription" value="Primative" />
+						<property name="description" value="No technology. TL0 species have only discovered the simplest tools and principles, and are on par with earths stone age." />
+					</bean>
+				</entry>	
+				<entry key="1">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="1" />
+						<property name="shortDescription" value="Primative" />
+						<property name="description" value="Roughly on par with Bronze or Iron age technology.  Tl1 science is mostly superstition, but they can manufacture weapons and work materials." />
+					</bean>
+				</entry>	
+				<entry key="2">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="2" />
+						<property name="shortDescription" value="Primative" />
+						<property name="description" value="Renaissance technology. TL2 brings with it a greateer understanding of chemistry, physics, biology and astronomy as well as the scientific method." />
+					</bean>
+				</entry>
+				<entry key="3">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="3" />
+						<property name="shortDescription" value="Primative" />
+						<property name="description" value="The advances of TL2 are now applied, bringing the germ of industrial revolution and steam power.  Primative firearms now dominate the battlefield, this is roughly comparable to the early 19th century." />
+					</bean>
+				</entry>
+				<entry key="4">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="4" />
+						<property name="shortDescription" value="Industrial" />
+						<property name="description" value="The transition to industrial revolution is complete, bringing plastics, radio and other such inventions.  Roughly comparable to the late 19th early 20th Century." />
+					</bean>
+				</entry>
+				<entry key="5">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="5" />
+						<property name="shortDescription" value="Industrial" />
+						<property name="description" value="TL5 brings widespread electrification, telecomunications and internal combustion.  At the high end of the TL, atomics and primative computing appear.  Roughtly on par with the mid 20th Century." />
+					</bean>
+				</entry>
+				<entry key="6">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="6" />
+						<property name="shortDescription" value="Industrial" />
+						<property name="description" value="TL6 brings the development of fission power and more advanced computing.  Advances in materials technology and rocketry bring about the dawn of the space age." />
+					</bean>
+				</entry>
+				<entry key="7">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="7" />
+						<property name="shortDescription" value="Pre-Stellar" />
+						<property name="description" value="A pre-stellar society can reach orbit reliably and has telecomunication satellites.  Computers become common, Roughly on par with late 20th century." />
+					</bean>
+				</entry>
+				<entry key="8">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="8" />
+						<property name="shortDescription" value="Pre-Stellar" />
+						<property name="description" value="At TL8 it is possible to reach other worlds in the same system, although teraforming or full colonisation are not within the cultures capacity.  Permenant space habitats become possible.  Fusion power becomes commercialy viable." />
+					</bean>
+				</entry>
+				<entry key="9">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="9" />
+						<property name="shortDescription" value="Pre-Stellar" />
+						<property name="description" value="The defining element of TL9 is the development of Gravity manipulation, which makes space travel vastly safer and faster.  This research leads to the development of the jump drive, which occurs at the end of the tech level.  TL9 cultures can colonise other worlds, however going to a colony is generaly a 1 way trip." />
+					</bean>
+				</entry>
+				<entry key="10">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="10" />
+						<property name="shortDescription" value="Early Stellar" />
+						<property name="description" value="With the advent of Jump, nearby systems are opened up.  Orbital habitats and factories become common. Interstellar travel and trade lead to an economic boon. Collonies become much more viable." />
+					</bean>
+				</entry>
+				<entry key="11">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="11" />
+						<property name="shortDescription" value="Early Stellar" />
+						<property name="description" value="The first true Artificial intelegences become possible, as computers are able to model synaptic networks.  Grav supported structures reach up to the heavensa. Jump-2 travel becomes possible, allowing easier travel beyond one-jump stelar mains." />
+					</bean>
+				</entry>
+				<entry key="12">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="12" />
+						<property name="shortDescription" value="Average Stellar" />
+						<property name="description" value="Weather controll revolutionises terraforming and agriculture.  Man portable plasma weapons and carrier mounted Fusion guns make the battlefield untennable for unarmoured combatants.  Jump-3 travel is developed." />
+					</bean>
+				</entry>
+				<entry key="13">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="13" />
+						<property name="shortDescription" value="Average Stellar" />
+						<property name="description" value="The Battle Dress appears on the battlefield in responce to the new weapons.  Clonng of body parts becomes easy. Advances in hull design and thruster plates mean spacecraft can easily enter atmosphere and even go underwater.  Jump-4 travel." />
+					</bean>
+				</entry>
+				<entry key="14">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="14" />
+						<property name="shortDescription" value="Average Stellar" />
+						<property name="description" value="Fusion weapons become man portable.  Flying cities appear.  Jump-5 Travel." />
+					</bean>
+				</entry>
+				<entry key="15">
+					<bean class="traveller.world.WorldTechLevel">
+						<property name="digit" value="15" />
+						<property name="shortDescription" value="High Stellar" />
+						<property name="description" value="Black Globe generators sugest a new direction for defencive technologies, while the development of synthetic analgathics means the human lifespan is much increased.  Jump-6 Travel possible." />
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>
