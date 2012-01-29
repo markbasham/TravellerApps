@@ -1,0 +1,40 @@
+<table border="1" cellspacing="0" cellpadding="0" width="$tableWidth" valign="top">
+	#foreach ( $row in [$dataTable.row0..$dataTable.rowEnd])
+    <tr>
+    #foreach ( $col in [$dataTable.col0..$dataTable.colEnd])
+      	#if ( $dataTable.isVisible($row, $col) )
+        	#if ( $dataTable.isDefaultCell($row, $col) )
+          		<td> </td>
+        	#else
+          		#set ( $cell = $dataTable.getCell($row, $col) )
+          			#if ( $cell.isType("title") )
+  						<td rowspan="$cell.rowSpan" colspan="$cell.colSpan" align="center" valign="top" bgcolor="0x666666">
+             				<b><big><big>
+             					$cell.name
+             				</big></big></b>
+          				</td>
+					#end
+					#if ( $cell.isType("heading") )
+  						<td rowspan="$cell.rowSpan" colspan="$cell.colSpan" align="center" valign="top" bgcolor="0xaaaaaa">
+             				<b><big>
+             					$cell.name
+             				</big></b>
+          				</td>
+					#end
+					#if ( $cell.isType("desc") )
+  						<td rowspan="$cell.rowSpan" colspan="$cell.colSpan" align="center" valign="top">
+             				<b>
+             					$cell.name
+             				</b>
+          				</td>
+					#end
+					#if ( $cell.isType("value") )
+  						<td rowspan="$cell.rowSpan" colspan="$cell.colSpan" align="left" valign="top">
+             					$cell.name
+          				</td>
+					#end
+        		#end
+      		#end
+    	#end
+	#end
+</table>

@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- Basic Electronics -->
+	<bean id="BasicElectronics-2" class="traveller.trade.DefinedGood">
+		<property name="description" value="Calculators/Adding Machines" />
+		<property name="tonIncrement" value="1d6x12" />
+		<property name="basePrice" value="6000" />
+	</bean>
+
+	<bean id="BasicElectronics-3-5" class="traveller.trade.DefinedGood">
+		<property name="description" value="Video Game and Entertainment Systems" />
+		<property name="tonIncrement" value="1d6x10" />
+		<property name="basePrice" value="8000" />
+	</bean>
+
+	<bean id="BasicElectronics-6-8" class="traveller.trade.DefinedGood">
+		<property name="description" value="Personal and Commercial Computers" />
+		<property name="tonIncrement" value="1d6x10" />
+		<property name="basePrice" value="10000" />
+	</bean>
+
+	<bean id="BasicElectronics-9-11" class="traveller.trade.DefinedGood">
+		<property name="description" value="Banking Machines and Security Systems" />
+		<property name="tonIncrement" value="1d6x4" />
+		<property name="basePrice" value="12000" />
+	</bean>
+
+	<bean id="BasicElectronics-12" class="traveller.trade.DefinedGood">
+		<property name="description" value="Microprocessor Assemblies" />
+		<property name="tonIncrement" value="1d6x2" />
+		<property name="basePrice" value="14000" />
+	</bean>
+
+	<bean id="BasicElectronics" class="traveller.trade.TradeGood">
+		<property name="roll" value="11" />
+		<property name="type" value="Basic Electronics" />
+		<property name="available">
+			<list>
+			</list>
+		</property>
+		<property name="maxTons" value="1d6x10" />
+		<property name="minPrice" value="6000" />
+		<property name="maxPrice" value="14000" />
+		<property name="purchaseDM">
+			<map>
+				<entry key-ref="In" value="2"/>
+				<entry key-ref="Ht" value="3"/>
+				<entry key-ref="Ri" value="1"/>
+			</map>
+		</property>
+		<property name="saleDM">
+			<map>
+				<entry key-ref="Ni" value="2"/>
+				<entry key-ref="Lt" value="1"/>
+				<entry key-ref="Po" value="1"/>
+			</map>
+		</property>
+		<property name="maxRiskAssesmentDM" value="0" />
+		<property name="dangerousGoodsDM" value="-6" />
+		<property name="definedTradeGoods">
+			<map>
+				<entry key="2" value-ref="BasicElectronics-2" />
+				<entry key="3-5" value-ref="BasicElectronics-3-5" />
+				<entry key="6-8" value-ref="BasicElectronics-6-8" />
+				<entry key="9-11" value-ref="BasicElectronics-9-11" />
+				<entry key="12" value-ref="BasicElectronics-12" />
+			</map>
+		</property>
+	</bean>
+	
+	
+	<!-- Basic Machine Parts -->
+	<bean id="BasicMachineParts-2" class="traveller.trade.DefinedGood">
+		<property name="description" value="Stamped/Pressed Cogs and Sprockets" />
+		<property name="tonIncrement" value="1d6x12" />
+		<property name="basePrice" value="8000" />
+	</bean>
+
+	<bean id="BasicMachineParts-3-5" class="traveller.trade.DefinedGood">
+		<property name="description" value="Piping and Attached Pieces" />
+		<property name="tonIncrement" value="1d6x10" />
+		<property name="basePrice" value="9000" />
+	</bean>
+
+	<bean id="BasicMachineParts-6-8" class="traveller.trade.DefinedGood">
+		<property name="description" value="Engine Components" />
+		<property name="tonIncrement" value="1d6x10" />
+		<property name="basePrice" value="10000" />
+	</bean>
+
+	<bean id="BasicMachineParts-9-11" class="traveller.trade.DefinedGood">
+		<property name="description" value="Pnumatics and Hydraulics" />
+		<property name="tonIncrement" value="1d6x6" />
+		<property name="basePrice" value="11000" />
+	</bean>
+
+	<bean id="BasicMachineParts-12" class="traveller.trade.DefinedGood">
+		<property name="description" value="Starship-Quality Components" />
+		<property name="tonIncrement" value="1d6x4" />
+		<property name="basePrice" value="12000" />
+	</bean>
+
+	<bean id="BasicMachineParts" class="traveller.trade.TradeGood">
+		<property name="roll" value="12" />
+		<property name="type" value="Basic Machine Parts" />
+		<property name="available">
+			<list>
+			</list>
+		</property>
+		<property name="maxTons" value="1d6x10" />
+		<property name="minPrice" value="8000" />
+		<property name="maxPrice" value="12000" />
+		<property name="purchaseDM">
+			<map>
+				<entry key-ref="Na" value="2"/>
+				<entry key-ref="In" value="5"/>
+			</map>
+		</property>
+		<property name="saleDM">
+			<map>
+				<entry key-ref="Ni" value="3"/>
+				<entry key-ref="Ag" value="2"/>
+			</map>
+		</property>
+		<property name="maxRiskAssesmentDM" value="0" />
+		<property name="dangerousGoodsDM" value="-6" />
+		<property name="definedTradeGoods">
+			<map>
+				<entry key="2" value-ref="BasicMachineParts-2" />
+				<entry key="3-5" value-ref="BasicMachineParts-3-5" />
+				<entry key="6-8" value-ref="BasicMachineParts-6-8" />
+				<entry key="9-11" value-ref="BasicMachineParts-9-11" />
+				<entry key="12" value-ref="BasicMachineParts-12" />
+			</map>
+		</property>
+	</bean>
+
+
+	<!-- Basic Manufactured Goods -->
+	<bean id="BasicManufacturedGoods-2" class="traveller.trade.DefinedGood">
+		<property name="description" value="Second Stage Components" />
+		<property name="tonIncrement" value="1d6x12" />
+		<property name="basePrice" value="8000" />
+	</bean>
+
+	<bean id="BasicManufacturedGoods-3-5" class="traveller.trade.DefinedGood">
+		<property name="description" value="Uniforms/Clothing Products" />
+		<property name="tonIncrement" value="1d6x10" />
+		<property name="basePrice" value="9000" />
+	</bean>
+
+	<bean id="BasicManufacturedGoods-6-8" class="traveller.trade.DefinedGood">
+		<property name="description" value="Residential Appliances" />
+		<property name="tonIncrement" value="1d6x10" />
+		<property name="basePrice" value="10000" />
+	</bean>
+
+	<bean id="BasicManufacturedGoods-9-11" class="traveller.trade.DefinedGood">
+		<property name="description" value="Furniture/Storage Systems/Tools" />
+		<property name="tonIncrement" value="1d6x5" />
+		<property name="basePrice" value="11000" />
+	</bean>
+
+	<bean id="BasicManufacturedGoods-12" class="traveller.trade.DefinedGood">
+		<property name="description" value="Vehical/Survival Accessories" />
+		<property name="tonIncrement" value="1d6x3" />
+		<property name="basePrice" value="12000" />
+	</bean>
+
+	<bean id="BasicManufacturedGoods" class="traveller.trade.TradeGood">
+		<property name="roll" value="13" />
+		<property name="type" value="Basic Manufactured Goods" />
+		<property name="available">
+			<list>
+			</list>
+		</property>
+		<property name="maxTons" value="1d6x10" />
+		<property name="minPrice" value="8000" />
+		<property name="maxPrice" value="12000" />
+		<property name="purchaseDM">
+			<map>
+				<entry key-ref="Na" value="2"/>
+				<entry key-ref="In" value="5"/>
+			</map>
+		</property>
+		<property name="saleDM">
+			<map>
+				<entry key-ref="Ni" value="3"/>
+				<entry key-ref="Hi" value="2"/>
+			</map>
+		</property>
+		<property name="maxRiskAssesmentDM" value="0" />
+		<property name="dangerousGoodsDM" value="-6" />
+		<property name="definedTradeGoods">
+			<map>
+				<entry key="2" value-ref="BasicManufacturedGoods-2" />
+				<entry key="3-5" value-ref="BasicManufacturedGoods-3-5" />
+				<entry key="6-8" value-ref="BasicManufacturedGoods-6-8" />
+				<entry key="9-11" value-ref="BasicManufacturedGoods-9-11" />
+				<entry key="12" value-ref="BasicManufacturedGoods-12" />
+			</map>
+		</property>
+	</bean>
+	
+	
+	<!-- Basic Raw Materials -->
+	<bean id="BasicRawMaterials-2" class="traveller.trade.DefinedGood">
+		<property name="description" value="Foundation Stones and Base Elements" />
+		<property name="tonIncrement" value="1d6x14" />
+		<property name="basePrice" value="1000" />
+	</bean>
+
+	<bean id="BasicRawMaterials-3-5" class="traveller.trade.DefinedGood">
+		<property name="description" value="Workable Metals" />
+		<property name="tonIncrement" value="1d6x12" />
+		<property name="basePrice" value="3000" />
+	</bean>
+
+	<bean id="BasicRawMaterials-6-8" class="traveller.trade.DefinedGood">
+		<property name="description" value="Workable Alloys" />
+		<property name="tonIncrement" value="1d6x10" />
+		<property name="basePrice" value="5000" />
+	</bean>
+
+	<bean id="BasicRawMaterials-9-11" class="traveller.trade.DefinedGood">
+		<property name="description" value="Fabricated Plastics" />
+		<property name="tonIncrement" value="1d6x5" />
+		<property name="basePrice" value="7000" />
+	</bean>
+
+	<bean id="BasicRawMaterials-12" class="traveller.trade.DefinedGood">
+		<property name="description" value="Chemical Solutions or Compounds" />
+		<property name="tonIncrement" value="1d6x3" />
+		<property name="basePrice" value="9000" />
+	</bean>
+
+	<bean id="BasicRawMaterials" class="traveller.trade.TradeGood">
+		<property name="roll" value="14" />
+		<property name="type" value="Basic Raw Materials" />
+		<property name="available">
+			<list>
+			</list>
+		</property>
+		<property name="maxTons" value="1d6x10" />
+		<property name="minPrice" value="1000" />
+		<property name="maxPrice" value="9000" />
+		<property name="purchaseDM">
+			<map>
+				<entry key-ref="Ag" value="3"/>
+				<entry key-ref="Ga" value="2"/>
+			</map>
+		</property>
+		<property name="saleDM">
+			<map>
+				<entry key-ref="In" value="2"/>
+				<entry key-ref="Po" value="2"/>
+			</map>
+		</property>
+		<property name="maxRiskAssesmentDM" value="0" />
+		<property name="dangerousGoodsDM" value="-6" />
+		<property name="definedTradeGoods">
+			<map>
+				<entry key="2" value-ref="BasicRawMaterials-2" />
+				<entry key="3-5" value-ref="BasicRawMaterials-3-5" />
+				<entry key="6-8" value-ref="BasicRawMaterials-6-8" />
+				<entry key="9-11" value-ref="BasicRawMaterials-9-11" />
+				<entry key="12" value-ref="BasicRawMaterials-12" />
+			</map>
+		</property>
+	</bean>
+	
+
+	<!-- Basic Consumables -->
+	<bean id="BasicConsumables-2" class="traveller.trade.DefinedGood">
+		<property name="description" value="Feed-grade Vegetation" />
+		<property name="tonIncrement" value="1d6x12" />
+		<property name="basePrice" value="500" />
+	</bean>
+
+	<bean id="BasicConsumables-3-5" class="traveller.trade.DefinedGood">
+		<property name="description" value="Food-grade Vegetation" />
+		<property name="tonIncrement" value="1d6x10" />
+		<property name="basePrice" value="1000" />
+	</bean>
+
+	<bean id="BasicConsumables-6-8" class="traveller.trade.DefinedGood">
+		<property name="description" value="Pre-packaged Food and Drink" />
+		<property name="tonIncrement" value="1d6x10" />
+		<property name="basePrice" value="2000" />
+	</bean>
+
+	<bean id="BasicConsumables-9-11" class="traveller.trade.DefinedGood">
+		<property name="description" value="Survival Rations and Storage-packed Liquids" />
+		<property name="tonIncrement" value="1d6x8" />
+		<property name="basePrice" value="3000" />
+	</bean>
+
+	<bean id="BasicConsumables-12" class="traveller.trade.DefinedGood">
+		<property name="description" value="Junk Food/Soda/Beer" />
+		<property name="tonIncrement" value="1d6x4" />
+		<property name="basePrice" value="5000" />
+	</bean>
+
+	<bean id="BasicConsumables" class="traveller.trade.TradeGood">
+		<property name="roll" value="15" />
+		<property name="type" value="Basic Consumables" />
+		<property name="available">
+			<list>
+			</list>
+		</property>
+		<property name="maxTons" value="1d6x10" />
+		<property name="minPrice" value="500" />
+		<property name="maxPrice" value="5000" />
+		<property name="purchaseDM">
+			<map>
+				<entry key-ref="Ag" value="3"/>
+				<entry key-ref="Wa" value="2"/>
+				<entry key-ref="Ga" value="1"/>
+				<entry key-ref="As" value="-4"/>
+			</map>
+		</property>
+		<property name="saleDM">
+			<map>
+				<entry key-ref="As" value="1"/>
+				<entry key-ref="Fl" value="1"/>
+				<entry key-ref="Ic" value="1"/>
+				<entry key-ref="Hi" value="1"/>
+			</map>
+		</property>
+		<property name="maxRiskAssesmentDM" value="0" />
+		<property name="dangerousGoodsDM" value="-6" />
+		<property name="definedTradeGoods">
+			<map>
+				<entry key="2" value-ref="BasicConsumables-2" />
+				<entry key="3-5" value-ref="BasicConsumables-3-5" />
+				<entry key="6-8" value-ref="BasicConsumables-6-8" />
+				<entry key="9-11" value-ref="BasicConsumables-9-11" />
+				<entry key="12" value-ref="BasicConsumables-12" />
+			</map>
+		</property>
+	</bean>
+	
+	
+	<!-- Basic Ore -->
+	<bean id="BasicOre-2" class="traveller.trade.DefinedGood">
+		<property name="description" value="Bornite, Galena or Sedimentary Stone" />
+		<property name="tonIncrement" value="1d6x14" />
+		<property name="basePrice" value="250" />
+	</bean>
+
+	<bean id="BasicOre-3-5" class="traveller.trade.DefinedGood">
+		<property name="description" value="Chalcocite or Talc" />
+		<property name="tonIncrement" value="1d6x12" />
+		<property name="basePrice" value="500" />
+	</bean>
+
+	<bean id="BasicOre-6-8" class="traveller.trade.DefinedGood">
+		<property name="description" value="Bauxite, Coltan or Wolframite" />
+		<property name="tonIncrement" value="1d6x10" />
+		<property name="basePrice" value="1000" />
+	</bean>
+
+	<bean id="BasicOre-9-11" class="traveller.trade.DefinedGood">
+		<property name="description" value="Acanthite, Cobaltite or Magnetite" />
+		<property name="tonIncrement" value="1d6x8" />
+		<property name="basePrice" value="1500" />
+	</bean>
+
+	<bean id="BasicOre-12" class="traveller.trade.DefinedGood">
+		<property name="description" value="Chromite or Cinnabar" />
+		<property name="tonIncrement" value="1d6x4" />
+		<property name="basePrice" value="2000" />
+	</bean>
+
+	<bean id="BasicOre" class="traveller.trade.TradeGood">
+		<property name="roll" value="16" />
+		<property name="type" value="Basic Ore" />
+		<property name="available">
+			<list>
+			</list>
+		</property>
+		<property name="maxTons" value="1d6x10" />
+		<property name="minPrice" value="250" />
+		<property name="maxPrice" value="2000" />
+		<property name="purchaseDM">
+			<map>
+				<entry key-ref="As" value="4"/>
+				<entry key-ref="Ic" value="0"/>
+			</map>
+		</property>
+		<property name="saleDM">
+			<map>
+				<entry key-ref="In" value="3"/>
+				<entry key-ref="Ni" value="1"/>
+			</map>
+		</property>
+		<property name="maxRiskAssesmentDM" value="0" />
+		<property name="dangerousGoodsDM" value="-6" />
+		<property name="definedTradeGoods">
+			<map>
+				<entry key="2" value-ref="BasicOre-2" />
+				<entry key="3-5" value-ref="BasicOre-3-5" />
+				<entry key="6-8" value-ref="BasicOre-6-8" />
+				<entry key="9-11" value-ref="BasicOre-9-11" />
+				<entry key="12" value-ref="BasicOre-12" />
+			</map>
+		</property>
+	</bean>
+
+</beans>

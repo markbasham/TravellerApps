@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- Define the contraband types -->
+	<bean id="Weapons" class="traveller.world.Contraband">
+		<property name="type" value="Weapons"/>
+	</bean>
+	<bean id="Drugs" class="traveller.world.Contraband">
+		<property name="type" value="Drugs"/>
+	</bean>
+	<bean id="Information" class="traveller.world.Contraband">
+		<property name="type" value="Information"/>
+	</bean>
+	<bean id="Technology" class="traveller.world.Contraband">
+		<property name="type" value="Technology"/>
+	</bean>
+	<bean id="Travellers" class="traveller.world.Contraband">
+		<property name="type" value="Travellers"/>
+	</bean>
+	<bean id="Psionics" class="traveller.world.Contraband">
+		<property name="type" value="Psionics"/>
+	</bean>
+	<bean id="Varies" class="traveller.world.Contraband">
+		<property name="type" value="Varies"/>
+	</bean>
+
+	<!-- Define base types -->
+	<bean id="Naval" class="traveller.world.Base">
+		<property name="type" value="Naval"/>
+	</bean>
+	<bean id="Scout" class="traveller.world.Base">
+		<property name="type" value="Scout"/>
+	</bean>
+	<bean id="Research" class="traveller.world.Base">
+		<property name="type" value="Research"/>
+	</bean>
+	<bean id="TAS" class="traveller.world.Base">
+		<property name="type" value="TAS"/>
+	</bean>
+	<bean id="ImperialConsulate" class="traveller.world.Base">
+		<property name="type" value="Imperial Consulate"/>
+	</bean>
+	<bean id="Pirate" class="traveller.world.Base">
+		<property name="type" value="Pirate"/>
+	</bean>
+
+	<!-- Import world classes -->
+	<import resource="WorldSizes.xml"/>
+	<import resource="WorldAtmosphere.xml"/>
+	<import resource="WorldHydrographics.xml"/>
+	<import resource="WorldPopulations.xml"/>
+	<import resource="WorldGovernments.xml"/>
+	<import resource="WorldLawLevels.xml"/>
+	<import resource="WorldStarports.xml"/>
+	<import resource="WorldTechLevel.xml"/>
+
+</beans>

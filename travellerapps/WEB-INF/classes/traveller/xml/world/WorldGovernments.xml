@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="worldGovernments" class="traveller.world.WorldGovernments">
+		<property name="governments">
+			<map>
+				<entry key="0">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="0" />
+						<property name="government" value="None" />
+						<property name="description" value="No government structure. In many cases, family bonds predominate." />
+						<property name="contraband">
+							<list>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="1">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="1" />
+						<property name="government" value="Company/Corporation" />
+						<property name="description" value="Ruling functions are assumed by a company managagement elite, and most citezenry are company employees or dependants" />
+						<property name="contraband">
+							<list>
+								<ref bean="Weapons"/>
+								<ref bean="Drugs"/>
+								<ref bean="Travellers"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="2">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="2" />
+						<property name="government" value="Participating Democracy" />
+						<property name="description" value="Ruling functions are reached by the advice and consent of the citezenry directly" />
+						<property name="contraband">
+							<list>
+								<ref bean="Drugs"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="3">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="3" />
+						<property name="government" value="Self-perpetuating oligarchy" />
+						<property name="description" value="Rulling functions are preformed by a restricted minority, with little or no input from the mass of citezenry" />
+						<property name="contraband">
+							<list>
+								<ref bean="Technology"/>
+								<ref bean="Weapons"/>
+								<ref bean="Travellers"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="4">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="4" />
+						<property name="government" value="Representative democracy" />
+						<property name="description" value="Ruling functions are performed by elected representatives" />
+						<property name="contraband">
+							<list>
+								<ref bean="Weapons"/>
+								<ref bean="Drugs"/>
+								<ref bean="Psionics"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="5">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="5" />
+						<property name="government" value="Feudal technology" />
+						<property name="description" value="Ruling functions are performed by specific individuals for persons who agreee to be rulled by them.  Relationships are based on the proformance of technical activities which are mutually benificial" />
+						<property name="contraband">
+							<list>
+								<ref bean="Technology"/>
+								<ref bean="Weapons"/>
+								<ref bean="Information"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="6">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="6" />
+						<property name="government" value="Captive Government" />
+						<property name="description" value="Rulling functions are performed by an imposed leadership answerable to an outside group" />
+						<property name="contraband">
+							<list>
+								<ref bean="Weapons"/>
+								<ref bean="Technology"/>
+								<ref bean="Travellers"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="7">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="7" />
+						<property name="government" value="Balkanisation" />
+						<property name="description" value="No central autohority exists; rival governments compete for control.  Law level refers to the government closest to the starport" />
+						<property name="contraband">
+							<list>
+								<ref bean="Varies"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="8">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="8" />
+						<property name="government" value="Civil service bureaucracy" />
+						<property name="description" value="Ruling functions are performed by government agancies employing individuals selected for there expertise" />
+						<property name="contraband">
+							<list>
+								<ref bean="Weapons"/>
+								<ref bean="Drugs"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="9">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="9" />
+						<property name="government" value="Impersonal bureaucracy" />
+						<property name="description" value="Ruling functions are performed by agencies which have become insulated from the goverened citezens" />
+						<property name="contraband">
+							<list>
+								<ref bean="Weapons"/>
+								<ref bean="Drugs"/>
+								<ref bean="Travellers"/>
+								<ref bean="Technology"/>
+								<ref bean="Psionics"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="10">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="10" />
+						<property name="government" value="Charismatic dictator" />
+						<property name="description" value="Ruling functions are performed by agencies directed by a single leader who enjoys the overwhelming confidence of the citizens" />
+						<property name="contraband">
+							<list>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="11">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="11" />
+						<property name="government" value="Non-charasmatic dictator" />
+						<property name="description" value="A previous charasmatic leder has been replaced by a leader through normal channels" />
+						<property name="contraband">
+							<list>
+								<ref bean="Weapons"/>
+								<ref bean="Technology"/>
+								<ref bean="Information"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="12">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="12" />
+						<property name="government" value="Charismatic oligarchy" />
+						<property name="description" value="Ruling functions are performed by a select group of members of an organisation or class which enjoys the overwhelming confidence of the citizenry" />
+						<property name="contraband">
+							<list>
+								<ref bean="Weapons"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="13">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="13" />
+						<property name="government" value="Religious dictatorship" />
+						<property name="description" value="Ruling functions are performed by a religious organisation without regard to the specific individual needs of the citizenry" />
+						<property name="contraband">
+							<list>
+								<ref bean="Varies"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="14">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="14" />
+						<property name="government" value="Religious Autocracy" />
+						<property name="description" value="Government by a single religious leader having absolute power over the citizenry" />
+						<property name="contraband">
+							<list>
+								<ref bean="Varies"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+				<entry key="15">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="15" />
+						<property name="government" value="Totalitarian Oligarchy" />
+						<property name="description" value="Government by an all-powerful minority which maintains absolute control through widespread coercion and oppression" />
+						<property name="contraband">
+							<list>
+								<ref bean="Varies"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

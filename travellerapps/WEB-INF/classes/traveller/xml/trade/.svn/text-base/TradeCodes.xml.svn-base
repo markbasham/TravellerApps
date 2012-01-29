@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- Define all the codes themselves -->
+	<bean id="Ag" class="traveller.trade.TradeCode">
+		<property name="code" value="Ag" />
+		<property name="name" value="Agricultural" />
+		<property name="description" value="Agricultural worlds are dedecated to farming and food production. Often they are divided into vast semi-feudal estates." />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="4-9" />
+		<property name="compHydro" value="4-8" />
+		<property name="compPopulation" value="5-7" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+		<bean id="As" class="traveller.trade.TradeCode">
+		<property name="code" value="As" />
+		<property name="name" value="Asteroid" />
+		<property name="description" value="Asteroids are usually mining colonies, but can also be orbital factories or colonies" />
+		<property name="compPlanetSize" value="0" />
+		<property name="compAtmosphere" value="0" />
+		<property name="compHydro" value="0" />
+		<property name="compPopulation" value="" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Ba" class="traveller.trade.TradeCode">
+		<property name="code" value="Ba" />
+		<property name="name" value="Barren" />
+		<property name="description" value="Barren worlds are uncollonised and Empty" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="" />
+		<property name="compHydro" value="" />
+		<property name="compPopulation" value="0" />
+		<property name="compGovernment" value="0" />
+		<property name="compLawLevel" value="0" />
+		<property name="compTechLevel" value="" />
+	</bean>
+
+	<bean id="De" class="traveller.trade.TradeCode">
+		<property name="code" value="De" />
+		<property name="name" value="Desert" />
+		<property name="description" value="Desert worlds are dry and barely habitable" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="2+" />
+		<property name="compHydro" value="0" />
+		<property name="compPopulation" value="" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Fl" class="traveller.trade.TradeCode">
+		<property name="code" value="Fl" />
+		<property name="name" value="Fluid Oceans" />
+		<property name="description" value="Fluid Oceans are worlds where the surface liquid is something other than water, and so are imcompatable with Earth derived life" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="10+" />
+		<property name="compHydro" value="1+" />
+		<property name="compPopulation" value="" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Ga" class="traveller.trade.TradeCode">
+		<property name="code" value="Ga" />
+		<property name="name" value="Garden" />
+		<property name="description" value="Garden worlds are Earth like" />
+		<property name="compPlanetSize" value="5+" />
+		<property name="compAtmosphere" value="4-9" />
+		<property name="compHydro" value="4-8" />
+		<property name="compPopulation" value="" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Hi" class="traveller.trade.TradeCode">
+		<property name="code" value="Hi" />
+		<property name="name" value="High Population" />
+		<property name="description" value="High population worlds have a population in the billions" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="" />
+		<property name="compHydro" value="" />
+		<property name="compPopulation" value="9+" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Ht" class="traveller.trade.TradeCode">
+		<property name="code" value="Ht" />
+		<property name="name" value="High Technology" />
+		<property name="description" value="High Technology worlds are ammong the most technologically advanced in the Imperium" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="" />
+		<property name="compHydro" value="" />
+		<property name="compPopulation" value="" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="12+" />
+	</bean>
+	
+	<bean id="Ic" class="traveller.trade.TradeCode">
+		<property name="code" value="Ic" />
+		<property name="name" value="Ice Capped" />
+		<property name="description" value="Ice capped worlds have most of there surface liquid frozen in polar ice caps, and are cold and dry" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="0-1" />
+		<property name="compHydro" value="1+" />
+		<property name="compPopulation" value="" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="In" class="traveller.trade.TradeCode">
+		<property name="code" value="In" />
+		<property name="name" value="Industrial" />
+		<property name="description" value="Industrial worlds are dominated by factories and cities" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="0-2,4,7,9" />
+		<property name="compHydro" value="" />
+		<property name="compPopulation" value="9+" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Lo" class="traveller.trade.TradeCode">
+		<property name="code" value="Lo" />
+		<property name="name" value="Low Population" />
+		<property name="description" value="Low population worlds have a population of only a few thousand or less" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="" />
+		<property name="compHydro" value="" />
+		<property name="compPopulation" value="1-3" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Lt" class="traveller.trade.TradeCode">
+		<property name="code" value="Lt" />
+		<property name="name" value="Low Technology" />
+		<property name="description" value="Low technology worlds are pre-industrial and cannot produce advanced goods." />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="" />
+		<property name="compHydro" value="" />
+		<property name="compPopulation" value="" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="5-" />
+	</bean>
+	<bean id="Na" class="traveller.trade.TradeCode">
+		<property name="code" value="Na" />
+		<property name="name" value="Non Agricultural" />
+		<property name="description" value="Non Agricultural worlds are too dry or barren to support their populations using conventional food production" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="0-3" />
+		<property name="compHydro" value="0-3" />
+		<property name="compPopulation" value="6+" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Ni" class="traveller.trade.TradeCode">
+		<property name="code" value="Ni" />
+		<property name="name" value="Non Industrial" />
+		<property name="description" value="Non industrial wolds have too low a population to maintain an industrial base" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="" />
+		<property name="compHydro" value="" />
+		<property name="compPopulation" value="4-6" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Po" class="traveller.trade.TradeCode">
+		<property name="code" value="Po" />
+		<property name="name" value="Poor" />
+		<property name="description" value="Poor worlds lack resources, viable land or sufficient population to be anything other than marginal colonies" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="2-5" />
+		<property name="compHydro" value="0-3" />
+		<property name="compPopulation" value="" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Ri" class="traveller.trade.TradeCode">
+		<property name="code" value="Ri" />
+		<property name="name" value="Rich" />
+		<property name="description" value="Rich worlds are blessed with a stable government and viable biosphere, making them economic powerhouses." />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="6,8" />
+		<property name="compHydro" value="" />
+		<property name="compPopulation" value="6-8" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Wa" class="traveller.trade.TradeCode">
+		<property name="code" value="Wa" />
+		<property name="name" value="Water World" />
+		<property name="description" value="Water worlds are nearly entirely water ocean" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="" />
+		<property name="compHydro" value="10" />
+		<property name="compPopulation" value="" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Va" class="traveller.trade.TradeCode">
+		<property name="code" value="Va" />
+		<property name="name" value="Vacuum" />
+		<property name="description" value="Vacuum worlds have no atmosphere" />
+		<property name="compPlanetSize" value="" />
+		<property name="compAtmosphere" value="0" />
+		<property name="compHydro" value="" />
+		<property name="compPopulation" value="" />
+		<property name="compGovernment" value="" />
+		<property name="compLawLevel" value="" />
+		<property name="compTechLevel" value="" />
+	</bean>
+	
+	<bean id="Az" class="traveller.trade.TradeCode">
+		<property name="code" value="A" />
+		<property name="name" value="Amber Zone" />
+		<property name="description" value="Amber Zone" />
+		<property name="travelZone" value="true" />
+	</bean>
+	
+	<bean id="Rz" class="traveller.trade.TradeCode">
+		<property name="code" value="R" />
+		<property name="name" value="Red Zone" />
+		<property name="description" value="Red Zone" />
+		<property name="travelZone" value="true" />
+	</bean>
+	
+	<bean id="Nz" class="traveller.trade.TradeCode">
+		<property name="code" value="Nz" />
+		<property name="name" value="No Default" />
+		<property name="description" value="Not available as standard" />
+		<property name="travelZone" value="true" />
+	</bean>
+	
+	<!-- Add all the codes to the TradeCode manager -->
+
+	<bean id="tradeCodes" class="traveller.trade.TradeCodes">
+		<property name="tradeCodes">
+			<map>
+				<entry key="Ag" value-ref="Ag"/>
+				<entry key="As" value-ref="As"/>
+				<entry key="Ba" value-ref="Ba"/>
+				<entry key="De" value-ref="De"/>
+				<entry key="Fl" value-ref="Fl"/>
+				<entry key="Ga" value-ref="Ga"/>
+				<entry key="Hi" value-ref="Hi"/>
+				<entry key="Ht" value-ref="Ht"/>
+				<entry key="Ic" value-ref="Ic"/>
+				<entry key="In" value-ref="In"/>
+				<entry key="Lo" value-ref="Lo"/>
+				<entry key="Lt" value-ref="Lt"/>
+				<entry key="Na" value-ref="Na"/>
+				<entry key="Ni" value-ref="Ni"/>
+				<entry key="Po" value-ref="Po"/>
+				<entry key="Ri" value-ref="Ri"/>
+				<entry key="Wa" value-ref="Wa"/>
+				<entry key="Va" value-ref="Va"/>
+				<entry key="A" value-ref="Az"/>
+				<entry key="R" value-ref="Rz"/>
+				<entry key="Nz" value-ref="Nz"/>
+			</map>
+		</property>
+	</bean>
+
+</beans>

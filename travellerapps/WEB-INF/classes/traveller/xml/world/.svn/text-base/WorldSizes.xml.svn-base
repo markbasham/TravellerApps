@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="worldSizes" class="traveller.world.WorldSizes">
+		<property name="sizes">
+			<map>
+				<entry key="0">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="0" />
+						<property name="size" value="800" />
+						<property name="gravity" value="0.0" />
+					</bean>
+				</entry>
+				<entry key="1">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="1" />
+						<property name="size" value="1600" />
+						<property name="gravity" value="0.05" />
+					</bean>
+				</entry>
+				<entry key="2">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="2" />
+						<property name="size" value="3200" />
+						<property name="gravity" value="0.15" />
+					</bean>
+				</entry>
+				<entry key="3">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="3" />
+						<property name="size" value="4800" />
+						<property name="gravity" value="0.25" />
+					</bean>
+				</entry>
+				<entry key="4">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="4" />
+						<property name="size" value="6400" />
+						<property name="gravity" value="0.35" />
+					</bean>
+				</entry>
+				<entry key="5">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="5" />
+						<property name="size" value="8000" />
+						<property name="gravity" value="0.45" />
+					</bean>
+				</entry>
+				<entry key="6">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="6" />
+						<property name="size" value="9600" />
+						<property name="gravity" value="0.7" />
+					</bean>
+				</entry>
+				<entry key="7">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="7" />
+						<property name="size" value="11200" />
+						<property name="gravity" value="0.9" />
+					</bean>
+				</entry>
+				<entry key="8">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="8" />
+						<property name="size" value="12800" />
+						<property name="gravity" value="1.0" />
+					</bean>
+				</entry>
+				<entry key="9">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="9" />
+						<property name="size" value="14400" />
+						<property name="gravity" value="1.25" />
+					</bean>
+				</entry>
+				<entry key="10">
+					<bean class="traveller.world.WorldSize">
+						<property name="digit" value="10" />
+						<property name="size" value="16000" />
+						<property name="gravity" value="1.4" />
+					</bean>
+				</entry>								
+			</map>
+		</property>
+	</bean>
+</beans>
