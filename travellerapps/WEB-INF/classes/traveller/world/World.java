@@ -40,7 +40,7 @@ public class World {
 		this.atmosphere = TravellerFactory.getWorldAtmospheres().getDigit(Integer.parseInt(code.substring(2, 3),16));
 		this.hydrographic = TravellerFactory.getWorldHydrographics().getDigit(Integer.parseInt(code.substring(3, 4),16));
 		this.population = TravellerFactory.getWorldPopulations().getDigit(Integer.parseInt(code.substring(4, 5),16));
-		this.government = TravellerFactory.getWorldGovernments().getDigit(Integer.parseInt(code.substring(5, 6),20));
+		this.government = TravellerFactory.getWorldGovernments().getDigit(Integer.parseInt(code.substring(5, 6),36));
 		this.law = TravellerFactory.getWorldLawLevels().getDigit(Integer.parseInt(code.substring(6, 7),20));
 		this.tech = TravellerFactory.getWorldTechLevels().getDigit(Integer.parseInt(code.substring(8, 9),17));
 
@@ -306,6 +306,9 @@ public class World {
 		System.out.println(worldPBG);
 		System.out.println(worldPBG.hasGasGiant());
 
+		World Fail1 = new World("Rayarkfost", "B4657X9-9", new Location(30,3));
+		System.out.println(Fail1);
+		
 		
 	}
 

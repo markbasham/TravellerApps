@@ -63,7 +63,7 @@ public class Subsector {
 				String bases = line.substring(uwpEnd,basesEnd).trim();
 				String comments = line.substring(basesEnd,commentsEnd).trim();
 				String zone = line.substring(commentsEnd,zoneEnd).trim();
-				String pbg = line.substring(zoneEnd,stellarEnd).trim();
+				String pbg = line.substring(zoneEnd,stellarEnd).trim().replace(" ", "0");
 				String stelarAlliance = line.substring(stellarEnd).trim();
 
 				try {
@@ -79,7 +79,7 @@ public class Subsector {
 							"Name = '" + name + "'\nLocation = '" + location +
 							"'\nUWP = '" + uwp + "'\nBases = '" + bases +
 							"\nComment = '" + comments + "'\nzone = '" + zone +
-							"'\nPBG = '" + pbg + "'\nStelar Aliance = '" + stelarAlliance);
+							"'\nPBG = '" + pbg + "'\nStelar Aliance = '" + stelarAlliance, e);
 				}	
 			}
 		}
@@ -206,7 +206,7 @@ public class Subsector {
 			System.out.println(subsector.generateWorldLink(key));
 		}
 
-		FileInputStream fis = new FileInputStream("Resources/Spinward.txt");
+		FileInputStream fis = new FileInputStream("Resources/Foreven.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(fis));
 		StringBuilder str = new StringBuilder();
 		String line = br.readLine();
@@ -218,7 +218,25 @@ public class Subsector {
 
 		String testString = str.toString();
 
-		Subsector sub2 = new Subsector("Test2", testString);
+		Subsector sub2 = new Subsector("Foreven", testString);
+		System.out.println("Foreven");
+
+		System.out.println(sub2);
+		
+		
+		fis = new FileInputStream("Resources/Spinward.txt");
+		br = new BufferedReader(new InputStreamReader(fis));
+		str = new StringBuilder();
+		line = br.readLine();
+		while (line != null) {
+			str.append(line);
+			str.append("\n");
+			line = br.readLine();
+		}
+
+		testString = str.toString();
+
+		sub2 = new Subsector("Test2", testString);
 		System.out.println("Sub2");
 
 		System.out.println(sub2);
@@ -233,7 +251,7 @@ public class Subsector {
 		System.out.println(sub2.getJumpWorlds(new Location(1,3), 2).toString());
 		System.out.println("Jump 3");
 		System.out.println(sub2.getJumpWorlds(new Location(1,3), 3).toString());
-
+		
 	}
 
 }

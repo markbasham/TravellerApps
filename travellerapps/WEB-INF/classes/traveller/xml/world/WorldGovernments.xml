@@ -201,6 +201,18 @@
 						</property>
 					</bean>
 				</entry>
+				<entry key="33">
+					<bean class="traveller.world.WorldGovernment">
+						<property name="digit" value="33" />
+						<property name="government" value="Unknown" />
+						<property name="description" value="Government undescribed in the normal rules" />
+						<property name="contraband">
+							<list>
+								<ref bean="Varies"/>
+							</list>
+						</property>
+					</bean>
+				</entry>
 				<entry key="15">
 					<bean class="traveller.world.WorldGovernment">
 						<property name="digit" value="15" />
