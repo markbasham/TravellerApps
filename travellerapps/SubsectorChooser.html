@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Enter your Subsector information</title>
+</head>
+<body>
+<p>Enter the information for the sector for which you are interested</p>
+
+<form method="POST" action="FramedSubsectorServlet" target="sector">
+<input type="hidden" name="subsectorLocation" value="Foreven" />
+<input type="hidden" name="subsectorName" value="Foreven" />
+<input type="submit" value="Foreven Sector" name="" />
+</form>
+
+<form method="POST" action="FramedSubsectorServlet" target="sector">
+<input type="hidden" name="subsectorLocation" value="Spinward" />
+<input type="hidden" name="subsectorName" value="Spinward Marches" />
+<input type="submit" value="Spinward Marches Sector" name="" />
+</form>
+
+<form method="POST" action="FramedSubsectorServlet" target="sector">
+<input type="hidden" name="subsectorLocation" value="SolomaniRim" />
+<input type="hidden" name="subsectorName" value="Solomani Rim" />
+<input type="submit" value="Solomani Rim" name="" />
+</form>
+
+<p>Or, if you want to use a sector which isn't listed above, copy the data file into the box below.</p>
+
+<form method="POST" action="FramedSubsectorServlet" target="sector">
+
+<p>Enter your subsector name : <input type="text" name="subsectorName" size="20" value="Example"></p>
+<p>Enter Subsector Code (Using the codes provided by <a href="http://traveller.wikia.com/wiki/Sector_Map">Traveller Wiki</a>) :</p>
+<textarea id="PlainTextIn" rows="8" cols="60" name="subsectorList"></textarea>
+<p><input type="submit" value="Submit" name="B1"></p>
+
+</form>
+
+</body>
+</html>

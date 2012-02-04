@@ -1,6 +1,8 @@
 package traveller.subsector;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,6 +31,27 @@ public class Subsector {
 		if (subsectorList != null) {
 			parseSECFormat(subsectorList);
 		}
+	}
+
+	public Subsector(String name, File file) {
+		
+		String subsectorList = null;
+		try {
+			byte[] buffer = new byte[(int) file.length()];
+			BufferedInputStream f;
+			f = new BufferedInputStream(new FileInputStream(file));
+			f.read(buffer);
+			subsectorList = new String(buffer);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	    
+	    this.name = name;
+	    
+		if (subsectorList != null) {
+			parseSECFormat(subsectorList);
+		}
+	    
 	}
 
 	private int positionOf(String string, String item){
@@ -63,7 +86,7 @@ public class Subsector {
 				String bases = line.substring(uwpEnd,basesEnd).trim();
 				String comments = line.substring(basesEnd,commentsEnd).trim();
 				String zone = line.substring(commentsEnd,zoneEnd).trim();
-				String pbg = line.substring(zoneEnd,stellarEnd).trim().replace(" ", "0");
+				String pbg = line.substring(zoneEnd,stellarEnd).replace(" ", "0");
 				String stelarAlliance = line.substring(stellarEnd).trim();
 
 				try {
@@ -172,7 +195,7 @@ public class Subsector {
 
 	public Subsector getJumpWorlds(Location worldLoc, int jumpNumber) {
 		Location[] locs = getJumpWorldsLocations(worldLoc, jumpNumber);
-		Subsector worldList = new Subsector("JumpList"+jumpNumber,null);
+		Subsector worldList = new Subsector("JumpList"+jumpNumber);
 		for (Location loc : locs) {
 			worldList.addWorld(loc, worlds.get(loc));
 		}
@@ -206,6 +229,16 @@ public class Subsector {
 			System.out.println(subsector.generateWorldLink(key));
 		}
 
+		
+		Subsector SolomaniTest = new Subsector("test", new File("Resources/SolomaniRim.txt"));
+		System.out.println("Solomani");
+		System.out.println(SolomaniTest);
+		
+		
+		Subsector fileLoadTest = new Subsector("test", new File("Resources/Foreven.txt"));
+		System.out.println(fileLoadTest);
+		
+		
 		FileInputStream fis = new FileInputStream("Resources/Foreven.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(fis));
 		StringBuilder str = new StringBuilder();

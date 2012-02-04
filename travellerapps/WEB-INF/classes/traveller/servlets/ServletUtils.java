@@ -1,5 +1,7 @@
 package traveller.servlets;
 
+import java.io.File;
+
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,8 +32,9 @@ public class ServletUtils {
 	public static final String destinationLocation = "destinationLocation";
 
 	// Subsector statics
-	public static final String subsectorName = "subsectorName";
-	public static final String subsectorList = "subsectorList";
+	public static final String subsectorName     = "subsectorName";
+	public static final String subsectorList     = "subsectorList";
+	public static final String subsectorLocation = "subsectorLocation";
 
 	// Subsector statics
 	public static final String jump1List = "jump1List";
@@ -46,8 +49,8 @@ public class ServletUtils {
 
 	// Trader information
 	public static final String traderNumber = "traderNumber";
-	
-	
+
+
 	public static World extractDestinationInformation(HttpServletRequest request, HttpServlet servlet) {
 		return extractWorldInformation(request, servlet, destinationLocation, destinationName, destinationCode, destinationTZ);
 	}
@@ -144,42 +147,64 @@ public class ServletUtils {
 
 	}
 
-
-	public static Subsector extractSubsector(HttpServletRequest request, HttpServlet servlet) {
-
+	
+	public static SubsectorBean getSessionBean(HttpServletRequest request, HttpServlet servlet) {
 		// get the bean out for the session
 		SubsectorBean bean = (SubsectorBean) servlet.getServletContext()
-		.getAttribute(request.getSession().getId());
+			.getAttribute(request.getSession().getId());
 
 		// if no bean exists, create one.
 		if(bean == null) {
 			bean = new SubsectorBean();
 		}		
+		
+		return bean;
+	}
+	
+
+	public static Subsector extractSubsector(HttpServletRequest request, HttpServlet servlet) {
+
+		// get the bean out for the session
+		SubsectorBean bean = getSessionBean(request, servlet);
 
 		// Generate the subsector
 		Subsector subsector = null;
 
-		// check to see if there is a subsector name in the request
-		// if there is, then put that information into the bean
-		String name = request.getParameter(subsectorName);
-		if(name == null) name = "";
-		if(name.trim().length() > 0) {
+		// collect all the possible subsector information
+		
+		
+		// The request could contain a location, in which case the sector should be loaded from the file
+		String location = request.getParameter(subsectorLocation);
+		String name     = request.getParameter(subsectorName);
+		String subList  = request.getParameter(subsectorList);
 
-			String subList = request.getParameter(subsectorList);
+		if(name == null) name = "";
+		
+		// if there is a location provided, then use that to create the subsector
+		if (location != null) {
+			try {
+				File file = new File("webapps/travellerapps/Resources",location+".txt");
+				servlet.log("Filename for sector data is :"+file.getAbsolutePath());
+				subsector = new Subsector(name, file);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		} else {
 			if (subList == null) subList = "";
 
 			if(subList.trim().length() > 1) {
-				subsector = new Subsector(request.getParameter(subsectorName), subList);
+				subsector = new Subsector(name, subList);
 			} else {
-				subsector = new Subsector(request.getParameter(subsectorName));
+				subsector = new Subsector(name);
 			}
-
-		} else {
+		}
+		
+		if (subsector == null) {
 			// there is no subsector in the request, try looking in the bean for stored information
 			if(bean.getSubsector() != null) subsector = bean.getSubsector();
 		}
 
-		// Finaly put the subsector back into the bean, and return the subsector
+		// Finally put the subsector back into the bean, and return the subsector
 		bean.setSubsector(subsector);
 		servlet.getServletContext().setAttribute(request.getSession().getId(), bean);
 
@@ -287,9 +312,9 @@ public class ServletUtils {
 		} catch (Exception e) {
 			//TODO log this somewhere.
 		}
-		
+
 		if (bean != null) {
-					
+
 			return bean.getTrader(world, traderNum);
 		}
 
@@ -328,12 +353,12 @@ public class ServletUtils {
 
 			// get the bean out for the session
 			SubsectorBean bean = (SubsectorBean) servlet.getServletContext()
-				.getAttribute(request.getSession().getId());
+			.getAttribute(request.getSession().getId());
 
 			World current = extractWorldInformation(request, servlet);
 			World destination = extractDestinationInformation(request, servlet);
 			int enviromentalModifier = extractEnviromentalModifier(request);
-			
+
 			return bean.getPassengers(current, destination, enviromentalModifier);
 
 		} catch (Exception e) {
@@ -343,31 +368,31 @@ public class ServletUtils {
 
 	public static Freight extractFreightInformation(HttpServletRequest request,
 			HttpServlet servlet) {
-		
+
 		try {
 
 			// get the bean out for the session
 			SubsectorBean bean = (SubsectorBean) servlet.getServletContext()
-				.getAttribute(request.getSession().getId());
+			.getAttribute(request.getSession().getId());
 
 			World current = extractWorldInformation(request, servlet);
 			World destination = extractDestinationInformation(request, servlet);
-			
+
 			return bean.getFreight(current, destination);
 
 		} catch (Exception e) {
 			return new Freight(new World("Current", new Location(0, 0)), new World("destination", new Location(0, 0)));
 		}
 	}
-	
+
 	public static void resetSubsectorBeanData(HttpServletRequest request, HttpServlet servlet) {
-		
+
 		// get the bean out for the session
 		SubsectorBean bean = (SubsectorBean) servlet.getServletContext()
-			.getAttribute(request.getSession().getId());
-		
+		.getAttribute(request.getSession().getId());
+
 		bean.clearTransientElements();
-		
+
 	}
 
 }
