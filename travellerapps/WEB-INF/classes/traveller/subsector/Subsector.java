@@ -15,11 +15,11 @@ import traveller.Utils;
 import traveller.world.World;
 
 public class Subsector {
-
+	
 	String name;
 
 	HashMap<Location,World> worlds = new HashMap<Location, World>();
-
+	
 	public Subsector(String name) {
 		this.name = name;
 		this.populate(0);
@@ -52,6 +52,10 @@ public class Subsector {
 			parseSECFormat(subsectorList);
 		}
 	    
+	}
+
+	public Subsector() {
+		// TODO Auto-generated constructor stub
 	}
 
 	private int positionOf(String string, String item){
@@ -195,7 +199,7 @@ public class Subsector {
 
 	public Subsector getJumpWorlds(Location worldLoc, int jumpNumber) {
 		Location[] locs = getJumpWorldsLocations(worldLoc, jumpNumber);
-		Subsector worldList = new Subsector("JumpList"+jumpNumber);
+		Subsector worldList = new Subsector();
 		for (Location loc : locs) {
 			worldList.addWorld(loc, worlds.get(loc));
 		}
